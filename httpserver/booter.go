@@ -2,15 +2,8 @@ package httpserver
 
 import (
 	"fmt"
+	"squizz/tools"
 )
-
-func LoadConfig() error{
-	fmt.Println("Loading configuration")
-	/*This function should read a yaml file and store the
-		server settings in a type struct
-	*/
-	return nil
-}
 
 func ConnectToDB() error{
 	fmt.Println("Connecting to database")
@@ -21,8 +14,10 @@ func ConnectToDB() error{
 func BootUp() error{
 	fmt.Println("Server booting...")
 
-	err := LoadConfig()
+	_,err := tools.LoadConfig()
+	//config,err := tools.LoadConfig()
 	if (err!=nil){
+		fmt.Println(err)
 		return err
 	}
 

@@ -1,0 +1,15 @@
+# config:
+#  server:
+#    port: 0
+#  database:
+#    host: database-host-name
+#    port: 0
+#    credentials:
+#      username:<username>
+#      password:<password>
+#    databasename:<db-name>
+#    engine:<db-engine> -> mongodb only, for now
+#    schema: <db-schema> if some
+#    mongodb:
+#      additional mongo db info
+  

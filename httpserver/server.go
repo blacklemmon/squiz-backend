@@ -1,8 +1,7 @@
 package httpserver
 
 import (
-	"fmt"
-	"net/http"
+
 )
 
 func RegisterRoutes(){

@@ -1,0 +1,13 @@
+config:
+ server:
+   port: 99
+ database:
+   host: mymongo
+   port: 5223
+   credentials:
+     username: admin
+     password: admin-password
+   databasename: my-mongodb
+   engine: mongodb
+   schema: votings
+  
