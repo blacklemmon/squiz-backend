@@ -38,7 +38,26 @@ func getConfigFileName() string {
 	return filename
 }
 
+var AllowedDBs = []string{"mongodb"}
+
 func ValidateSetup(setup Config)error {
+
+	//Check database engine
+	if (ArrayFind(AllowedDBs, setup.Database.Engine)<0){
+		return fmt.Errorf("Database engine not supported")
+	}
+
+	//Check port is valid
+	if (setup.Server.Port<=0) {
+		return fmt.Errorf("Invalid port: %d", setup.Server.Port)
+	}
+
+	//We shouldn't use these ports
+	var ports = []int{80,443,81,82}
+	if (ArrayFind(ports,setup.Server.Port)>=0) {
+		fmt.Printf("!!! Please don't use the %d port...\n",setup.Server.Port)
+	}
+
 	return nil
 }
 
