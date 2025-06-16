@@ -5,6 +5,7 @@ import(
 	"squizz/httpserver"
 )
 func main(){
+	
 	bootOK := httpserver.BootUp()
 	
 	if (bootOK!=nil) {
