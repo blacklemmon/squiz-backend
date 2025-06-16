@@ -1,15 +1,20 @@
 package httpserver
 
 import (
-
+	"fmt"
+	"net/http"
+	"squizz/routes"
 )
 
 func RegisterRoutes(){
-	//http.HandleFunc(path,function)
+	http.HandleFunc("/", routes.Ping)
 } 
 
-func StartServer() error{
+func StartServer(port int) error{
 	RegisterRoutes()
 
-	return nil
+	address := fmt.Sprintf(":%d",port)
+
+	httpErr := http.ListenAndServe(address,nil)
+	return httpErr
 }

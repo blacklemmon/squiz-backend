@@ -14,8 +14,8 @@ func ConnectToDB() error{
 func BootUp() error{
 	fmt.Println("Server booting...")
 
-	_,err := tools.LoadConfig()
-	//config,err := tools.LoadConfig()
+	config,err := tools.LoadConfig()
+	//_,err := tools.LoadConfig()
 	if (err!=nil){
 		fmt.Println(err)
 		return err
@@ -23,11 +23,13 @@ func BootUp() error{
 
 	err = ConnectToDB()
 	if (err!=nil){
+		fmt.Println(err)
 		return err
 	}
 
-	err = StartServer()
+	err = StartServer(config.Server.Port)
 	if (err!=nil){
+		fmt.Println(err)
 		return err
 	}
 
