@@ -20,6 +20,7 @@ type databaseSetup struct {
 	Port        int    `yaml:"port"`
 	Name        string `yaml:"name"`
 	Schema      string `yaml:"schema"`
+	ConnectionString string `yaml:connectionString`
 	Credentials databaseCredentials `yaml:"credentials"`
 	Engine      string `yaml:"engine"`
 	//  mongodb

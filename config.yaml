@@ -4,6 +4,7 @@ config:
  database:
    host: mymongo
    port: 5223
+   connectionString:"mongodb://localhost:27017/"
    credentials:
      username: admin
      password: admin-password
